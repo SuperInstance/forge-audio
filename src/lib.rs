@@ -75,6 +75,7 @@ impl AudioDecomposer {
         for k in 0..half {
             let mut sum_re = 0.0;
             let mut sum_im = 0.0;
+            #[allow(clippy::needless_range_loop)]
             for t in 0..n {
                 let angle = -2.0 * std::f64::consts::PI * k as f64 * t as f64 / n as f64;
                 sum_re += real[t] * angle.cos();
